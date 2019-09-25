@@ -2,7 +2,9 @@
 <% @tweets.each do |tweet| %>
   <p>
     <%= tweet.message %>┃
-    <%= tweet.tdate %>┃
+    <time datetime="<%= tweet.tdate %>">
+      <%= time_ago_in_words(tweet.tdate) %>
+    </time>|
     <%= link_to '表示', "tweets/#{tweet.id}" %>
     <%= link_to '編集', "tweets/#{tweet.id}/edit" %>
     <%= link_to '削除', "tweets/#{tweet.id}", method: :delete %>
