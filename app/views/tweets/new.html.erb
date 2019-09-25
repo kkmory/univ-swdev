@@ -1,0 +1,17 @@
+<h1>Add new tweet</h1>
+
+<% if @tweet.errors.present? %>
+  <h3>エラーがあります</h3>
+  <ul>
+    <% @tweet.errors.full_messages.each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @tweet, url: {action: :create} do |f| %>
+  <%= f.label :message, '今の気持ちをツイートしよう！' %>
+  <%= f.text_field :message %>
+  <br>
+  <%= f.submit '登録' %>
+<% end %>
