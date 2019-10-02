@@ -1,3 +1,146 @@
-// Place all the styles related to the Tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  max-width: 960px;
+  min-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-profile {
+  width: 35%;
+  padding: 16px 20px;
+
+  .display_name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .user_name {
+    color: #777;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 0.86rem;
+    line-height: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .links {
+    color: #777;
+    font-size: 0.86rem;
+    margin-bottom: 12px;
+  }
+}
+
+.content-timeline {
+  width: 65%;
+  background: #ffffff;
+
+  .timeline-header {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin: 0;
+    padding: 0 20px;
+    color: #333;
+    border-bottom: 1px solid #cccccc;
+
+    .navigation {
+      color: #1DA1F2;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .navigation:nth-child(n + 2) {
+      margin-left: 30px;
+    }
+
+    .active {
+      color: #333;
+    }
+  }
+
+  .timeline-card {
+    width: 100%;
+    padding: 14px 10px;
+    color: #333;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+
+    .timeline-card-icon {
+      width: 76px;
+      padding: 0 8px;
+
+      img {
+        width: 100%;
+        border-radius: 35px;
+        background: #444;
+      }
+    }
+
+    .timeline-card-body {
+      width: calc(100% - 76px);
+      padding-left: 8px;
+
+      .display_name {
+        font-weight: 600;
+      }
+
+      .user_name {
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      .tweet_time {
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      p {
+        padding: 6px 0;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 8px;
+        margin-right: 20px;
+        color: #777777;
+        font-size: 0.8rem;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #1DA1F2;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.tweet {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background: #1DA1F2;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.9rem;
+  position: fixed;
+  z-index: 999;
+  right: 90px;
+  bottom: 30px;
+  box-shadow: 2px 2px 4px #aaaaaa;
+
+  img {
+    width: 45%;
+    padding: 18px 0 0 0;
+  }
+}
+
+.tweet:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
