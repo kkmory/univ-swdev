@@ -9,16 +9,16 @@
       履修に関するご質問は所属学部。入試に関するご相談は、入学センターへお問い合わせ下さい。
     </p>
     <p class="links">大阪府東大阪市</p>
-    <p class="links"><a href="#">instagram.com/kindaiuniversity</a></p>
+    <p class="links"><%= link_to 'instagram.com/kindaiuniversity', 'https://instagram.com/kindaiuniversity' %></p>
     <p class="links">2010年12月に登録</p>
-    <%= link_to 'ツイート', "#/", class: 'action-btn' %>
+    <%= link_to 'ツイート', new_tweet_path, class: 'action-btn' %>
     <%= link_to 'ダイレクトメッセージ', "#/", class: 'action-btn' %>
   </div>
   <div class="content-timeline">
     <div class="timeline-header">
-      <a class="navigation active" herf="#">ツイート</a>
-      <a class="navigation" herf="#">ツイートと返信</a>
-      <a class="navigation" herf="#">メディア</a>
+      <%= link_to 'ツイート', '#', class: 'navigation active' %>
+      <%= link_to 'ツイートと返信', '#', class: 'navigation' %>
+      <%= link_to 'メディア', '#', class: 'navigation' %>
     </div>
     <% @tweets.each do |tweet| %>
       <div class="timeline-card">
@@ -34,8 +34,8 @@
           <p>
             <%= tweet.message %>
           </p>
-          <%= link_to '表示', "tweets/#{tweet.id}" %>
-          <%= link_to '編集', "tweets/#{tweet.id}/edit" %>
+          <%= link_to '表示', edit_tweet_path(tweet.id) %>
+          <%= link_to '編集', tweet_path(tweet.id) %>
           <%= link_to '削除', "tweets/#{tweet.id}", method: :delete %>
         </div>
       </div>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-<%= link_to 'tweets/new', class: 'tweet' do %>
+<%= link_to new_tweet_path, class: 'tweet' do %>
   <%= image_tag 'twitter.png' %><br>
   ツイート
 <% end %>
