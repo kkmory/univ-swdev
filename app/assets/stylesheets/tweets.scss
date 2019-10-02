@@ -8,6 +8,7 @@
 
 .content-profile {
   width: 35%;
+  min-width: 260px;
   padding: 16px 20px;
 
   .display_name {
@@ -32,6 +33,27 @@
     color: #777;
     font-size: 0.86rem;
     margin-bottom: 12px;
+  }
+
+  .action-btn {
+    display: inline-block;
+    width: 48%;
+    min-width: 100px;
+    padding: 14px 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 0.9rem;
+    background: #1DA1F2;
+    color: #f6f6f6;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+
+  .action-btn:nth-child(1) {
+    margin-right: 10px;
   }
 }
 
